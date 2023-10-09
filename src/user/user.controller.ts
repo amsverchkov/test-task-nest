@@ -56,7 +56,7 @@ export class UserController {
 	@ApiOperation({ summary: 'Deletes user by id' })
 	@ApiOkResponse({ status: 200, description: 'Returns deleted user' })
 	@ApiBadRequestResponse({
-		status: 500 | 404,
+		status: 500,
 	})
 	async deleteUser(@Param('id') id: string) {
 		return await this.userService.deleteUser({ _id: id });
@@ -65,7 +65,7 @@ export class UserController {
 	@Put(':id')
 	@ApiOkResponse({ status: 200, description: 'Returns updated user' })
 	@ApiBadRequestResponse({
-		status: 500 | 404,
+		status: 500,
 	})
 	async updateUser(@Param('id') id: string, @Body() dto: UpdateUserDto) {
 		return await this.userService.updateUser(id, dto);
