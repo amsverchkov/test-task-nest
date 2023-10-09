@@ -16,10 +16,9 @@ async function bootstrap() {
 	const configService = app.get<ConfigService>(ConfigService);
 	const port = configService.get('PORT') ?? 3000;
 	const config = new DocumentBuilder()
-		.setTitle('Cats example')
-		.setDescription('The cats API description')
+		.setTitle('Nest api (test)')
+		.setDescription('Nest api (test)')
 		.setVersion('1.0')
-		.addTag('cats')
 		.build();
 	const document = SwaggerModule.createDocument(app, config);
 	SwaggerModule.setup('api', app, document);
